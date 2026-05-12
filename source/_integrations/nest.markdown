@@ -309,6 +309,15 @@ This feature is enabled by the following permissions:
 
 {% endnote %}
 
+### Action set_fan_timer
+
+Sets the fan to run for a specific duration. The SDM API supports a maximum duration of 15 hours.
+
+| Action data field | Optional | Description |
+| ----------------- | -------- | ----------- |
+| `entity_id`       | No       | Name of the climate entity to set the fan timer on. |
+| `duration`        | No       | The duration the fan should run for (e.g., `00:15:00`). |
+
 ## Sensor
 
 All Google Nest Thermostat models have traits exposed from the SDM API. The initial values of the sensors are fetched on startup, then updated regularly using the Cloud Pubsub subscriber. The following traits are supported with sensors:
@@ -598,7 +607,7 @@ during the account linking process means that the Google Account used cannot acc
 - You can organize your homes and devices in the Google Home App and [share homes and devices](https://support.google.com/googlenest/answer/9155535) across accounts. Ensure the account being used has access to the Home.
 - If you formerly had a Nest account, ensure that it is migrated successfully to a Google Account. If your Google Home has multiple members, please note that the individual who initially set up the home must complete the migration of their Nest Account to a Google Account before you can establish a connection with Home Assistant.
 
-#### Symptom: Error 400: redirect_uri_mismatch 
+#### Symptom: Error 400: redirect_uri_mismatch
 
 ##### Description
 
@@ -643,7 +652,7 @@ Make sure the credential in the [Google Cloud Console](https://console.developer
 
 ##### Description
 
-According to Google's [Partner Connections Manager Error Reference](https://developers.google.com/nest/device-access/reference/errors/pcm), this error covers all other undocumented internal errors within Partner Connections. One of the issues that cause this error is synchronization problems between the Nest and Google Home apps. 
+According to Google's [Partner Connections Manager Error Reference](https://developers.google.com/nest/device-access/reference/errors/pcm), this error covers all other undocumented internal errors within Partner Connections. One of the issues that cause this error is synchronization problems between the Nest and Google Home apps.
 
 ##### Resolution
 
